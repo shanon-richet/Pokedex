@@ -1,0 +1,32 @@
+body {
+    font-family: 'Zilla Slab', serif;
+}
+header section {
+    width: 100%;
+    background-color: orange;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+h1 {
+    display: flex;
+    justify-content: center;
+}
+input {
+    height: 20px;
+}
+.pokedex {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #b51b25;
+    z-index: 1;
+}
+.pokedex section {
+    width: 300px;
+    height: 330px;
+}
+.pokemon {
+    border: 1px ridge whitesmoke;
+    text-align: center;
+
+}
+

@@ -36,6 +36,9 @@ for (let i = 1; i < 10 ; i++) {
     const pokemonType = document.createElement('p')
     pokemonType.textContent = "type :" + json.types[0].type.name;
     pokemons.appendChild(pokemonType) 
+    if (json.types[1].type.name) {
+        pokemonType.textContent = "type :" + json.types[0].type.name + ', ' + json.types[1].type.name;
+    }
 
     const pokemonWeight = document.createElement('p')
     pokemonWeight.textContent = "weight: " + json.weight + " kg"

@@ -1,16 +1,7 @@
 const header= document.querySelector('header section')
 const pokedex = document.querySelector('.pokedex')
-
-const form= document.createElement('form')
-form.innerHTML= "Select Pokemons"
-
-const select= document.createElement('select')
-const options= document.querySelectorAll('option')
-
-const inputSearch= document.querySelectorAll('.search')
-
-header.appendChild(form)
-form.appendChild(select)
+const inputSearch= document.querySelector('.searchBar')
+const button= document.querySelector('button')
 
 const pokemonArray= []
 for (let i = 1; i < 10 ; i++) {
@@ -42,16 +33,24 @@ for (let i = 1; i < 10 ; i++) {
     const pokemonWeight = document.createElement('p')
     pokemonWeight.textContent = "weight: " + json.weight + " kg"
     pokemons.appendChild(pokemonWeight)
-
+    console.log(pokemons.children[1].textContent[0])
     let arr= {}
     arr['nom'] = json.name
     arr['imgUrl'] = pokemonImage.src
     pokemonArray.push(arr)
-    var option = document.createElement('option')
-    select.appendChild(option)
-    option.value= json.name
-    option.innerHTML = json.name;
+
+    document.body.addEventListener('keydown', searchEvent)
+    function searchEvent(){
+    var x= event.keyCode;
+    if (x === 13){
+        pokemons.style.display = "block"
+    if (inputSearch.value == "") {
+        pokemons.style.display = "block"
+    } 
+    if (inputSearch.value !== pokemons.children[1].textContent) {
+        pokemons.style.display = "none"
+    }
+}
+}
     })
 }
-
-
